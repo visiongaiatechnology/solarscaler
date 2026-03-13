@@ -1,79 +1,15 @@
-/* * VISIONGAIATECHNOLOGY SKIN v3.1 (GDPR/DSGVO SAFE)
- * MODE: LOCAL ASSETS ONLY
- * PATH: /wp-content/uploads/vgt-shadow-net/assets/
+/**
+ * VISIONGAIATECHNOLOGY SKIN v3.2 (OPEN SOURCE EDITION)
+ * MODE: EXTERNAL ASSETS (GOOGLE FONTS)
+ * DESCRIPTION: Entfernt lokale VLP/Shadow-Net Abhängigkeiten für öffentliche Distribution.
  */
 
-/* --- REMOVED GOOGLE FONTS IMPORT --- */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap'); */
-
-/* --- LOCAL FONT DEFINITIONS --- */
-
-/* FAMILY: INTER (Main UI) */
-@font-face {
-    font-family: 'Inter';
-    src: url('/wp-content/uploads/vgt-shadow-net/assets/Inter-Regular.woff2') format('woff2'),
-         url('/wp-content/uploads/vgt-shadow-net/assets/Inter-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Inter';
-    src: url('/wp-content/uploads/vgt-shadow-net/assets/Inter-SemiBold.woff2') format('woff2'),
-         url('/wp-content/uploads/vgt-shadow-net/assets/Inter-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Inter';
-    src: url('/wp-content/uploads/vgt-shadow-net/assets/Inter-ExtraBold.woff2') format('woff2'),
-         url('/wp-content/uploads/vgt-shadow-net/assets/Inter-ExtraBold.woff') format('woff');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* FAMILY: SPACE GROTESK (Headlines / HUD) */
-@font-face {
-    font-family: 'Space Grotesk';
-    src: url('/wp-content/uploads/vgt-shadow-net/assets/SpaceGrotesk-Regular.woff2') format('woff2'),
-         url('/wp-content/uploads/vgt-shadow-net/assets/SpaceGrotesk-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Space Grotesk';
-    src: url('/wp-content/uploads/vgt-shadow-net/assets/SpaceGrotesk-Bold.woff2') format('woff2'),
-         url('/wp-content/uploads/vgt-shadow-net/assets/SpaceGrotesk-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* FAMILY: JETBRAINS MONO (Data / Numbers) */
-@font-face {
-    font-family: 'JetBrains Mono';
-    src: url('/wp-content/uploads/vgt-shadow-net/assets/JetBrainsMono-Regular.woff2') format('woff2'),
-         url('/wp-content/uploads/vgt-shadow-net/assets/JetBrainsMono-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'JetBrains Mono';
-    src: url('/wp-content/uploads/vgt-shadow-net/assets/JetBrainsMono-Bold.woff2') format('woff2'),
-         url('/wp-content/uploads/vgt-shadow-net/assets/JetBrainsMono-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
+/* --- GOOGLE FONTS IMPORT (GDPR Note: Loaded directly for OS version) --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap');
 
 /* ISOLATED ROOT CONTAINER */
 #vg-sun-root {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: #050505;
     color: #e2e8f0;
     line-height: 1.5;
@@ -90,6 +26,19 @@
     border-width: 0;
     border-style: solid;
     border-color: #334155;
+}
+
+/* TYPOGRAPHY OVERRIDES FOR OS CHANNELS */
+#vg-sun-root h1, 
+#vg-sun-root h2, 
+#vg-sun-root .hud-header {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#vg-sun-root .data-value, 
+#vg-sun-root code, 
+#vg-sun-root pre {
+    font-family: 'JetBrains Mono', monospace;
 }
 
 /* MODULAR COMPONENT: GLASS PANEL */
@@ -119,4 +68,19 @@
     pointer-events: none;
     z-index: 5;
     opacity: 0.4;
+}
+
+/* SCROLLBAR STYLING FOR OPEN SOURCE */
+#vg-sun-root ::-webkit-scrollbar {
+    width: 6px;
+}
+#vg-sun-root ::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+#vg-sun-root ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+}
+#vg-sun-root ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
 }
