@@ -8,49 +8,49 @@
 [![VGT](https://img.shields.io/badge/VGT-VisionGaia_Technology-red?style=for-the-badge)](https://visiongaiatechnology.de)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-00457C?style=for-the-badge&logo=paypal)](https://www.paypal.com/paypalme/dergoldenelotus)
 
-> *"Privatsphäre ist kein Feature, sondern ein Grundrecht."*
+> *"Privacy is not a feature — it is a fundamental right."*
 
-**SolarScaler** ist die asymmetrische Antwort auf US-basierte Datenlecks in modernen WordPress-Mediacentern. Ein autonomer Proxy-Node der NASA Solar Dynamics Observatory (SDO) Bilder lokal cached, MIME-validiert und DSGVO-konform ausliefert — ohne dass die IP deiner Nutzer jemals US-Server erreicht.
+**SolarScaler** is the asymmetric answer to US-based data leaks in modern WordPress media centers. An autonomous proxy node that locally caches NASA Solar Dynamics Observatory (SDO) imagery, validates MIME types, and delivers content in full GDPR compliance — without your users' IP addresses ever reaching US servers.
 
 ---
 
-## 🚨 Das Problem mit Standard-Integrationen
+## 🚨 The Problem with Standard Integrations
 
-Jedes WordPress Plugin das NASA-Bilder direkt einbindet, sendet bei jedem Seitenaufruf die IP-Adresse und Browserdaten deiner Nutzer an US-Server — ein stiller DSGVO-Verstoß der in den meisten Implementierungen schlicht ignoriert wird.
+Every WordPress plugin that embeds NASA images directly sends your visitors' IP addresses and browser data to US servers on every page load — a silent GDPR violation that most implementations simply ignore.
 
 | Standard Integration | VGT SolarScaler Node |
 |---|---|
-| ❌ Direkt-Link zu nasa.gov | ✅ Lokaler Proxy-Endpunkt |
-| ❌ User-IP Leak in die USA | ✅ 100% DSGVO-konforme Datenhoheit |
-| ❌ Keine MIME-Validierung (RCE Risiko) | ✅ Inbound MIME-Scrubbing & Security |
-| ❌ Abhängig von Drittstaaten-Firewalls | ✅ Unabhängig durch lokales Caching |
+| ❌ Direct link to nasa.gov | ✅ Local proxy endpoint |
+| ❌ User IP leaked to the US | ✅ 100% GDPR-compliant data sovereignty |
+| ❌ No MIME validation (RCE risk) | ✅ Inbound MIME scrubbing & security |
+| ❌ Dependent on foreign-state firewalls | ✅ Independent through local caching |
 
 ---
 
 ## 🛰️ Features
 
 ### Ghost-Node Architecture (Evasion)
-Der Scraper nutzt Browser-Emulation und kognitives Referer-Spoofing. Er tarnt sich als legitimer menschlicher Rezipient um eine konstante Datenrate ohne Unterbrechungen sicherzustellen.
+The scraper uses browser emulation and cognitive referer spoofing, disguising itself as a legitimate human recipient to ensure a constant data rate without interruptions from IDS systems.
 
 ### Kinetic cURL Failsafe (Resilience)
-Falls WordPress-interne Filter die `wp_remote_get` API blockieren, initiiert SolarScaler einen kinetischen cURL-Bypass — Verfügbarkeit ist garantiert, egal wie restriktiv das Host-System ist.
+If WordPress-internal filters block the `wp_remote_get` API, SolarScaler initiates a kinetic cURL bypass — availability is guaranteed regardless of how restrictive the host environment is.
 
 ### Polite Throttling (Ethics)
-500ms Throttling zwischen Downloads simuliert menschliche Browsing-Pausen und schont die NASA-Infrastruktur. Open Source bedeutet auch Verantwortung.
+500ms throttling between downloads simulates human browsing behavior and reduces load on NASA infrastructure. Open source means responsibility.
 
 ### MIME-Scrubbing Security Layer
-Jeder inbound Datenframe wird vor dem lokalen Speichern gegen seinen MIME-Type validiert. Kein manipulierter Content erreicht deinen Server.
+Every inbound data frame is validated against its MIME type before local storage. No manipulated content ever reaches your server.
 
 ---
 
-## 📡 Telemetrie-Spektrum — SDO Multi-Channel Support
+## 📡 Telemetry Spectrum — SDO Multi-Channel Support
 
-| Kanal | Name | Beschreibung |
+| Channel | Name | Description |
 |---|---|---|
-| `171` | Corona / Loop | Magnetische Feldlinien in der Korona. Wellenlänge: 171 Ångström (Extremes Ultraviolett) |
-| `193` | Outer Corona | Koronale Löcher und die äußere Atmosphäre. Wellenlänge: 193 Ångström |
-| `304` | Chromosphere | Filamente und Eruptionen. Wellenlänge: 304 Ångström |
-| `HMI` | Magnetogram | Helioseismic and Magnetic Imager — erfasst magnetische Polarität auf der Sonnenoberfläche |
+| `171` | Corona / Loop | Magnetic field lines in the corona. Wavelength: 171 Ångström (Extreme Ultraviolet) |
+| `193` | Outer Corona | Coronal holes and outer atmosphere. Wavelength: 193 Ångström |
+| `304` | Chromosphere | Filaments and eruptions. Wavelength: 304 Ångström |
+| `HMI` | Magnetogram | Helioseismic and Magnetic Imager — captures magnetic polarity on the solar surface |
 
 ---
 
@@ -69,23 +69,23 @@ LICENSE           GNU AGPLv3
 
 ## 🚀 Installation
 
-### Voraussetzungen
+### Requirements
 - WordPress 6.0+
 - PHP 8.0+
-- cURL aktiviert
-- Schreibrechte auf `wp-content/uploads/`
+- cURL enabled
+- Write permissions on `wp-content/uploads/`
 
 ### Setup
 
-1. Plugin herunterladen und in `/wp-content/plugins/vgt-solarscaler/` entpacken
-2. Im WordPress Dashboard unter **Plugins → Installierte Plugins** aktivieren
-3. Unter **Einstellungen → SolarScaler** die gewünschten SDO-Kanäle konfigurieren
-4. Ersten Sync manuell anstoßen oder Cron abwarten
+1. Download the plugin and extract it to `/wp-content/plugins/vgt-solarscaler/`
+2. Activate via **Plugins → Installed Plugins** in your WordPress Dashboard
+3. Configure desired SDO channels under **Settings → SolarScaler**
+4. Trigger the first sync manually or wait for the cron job
 
-### Shortcode Verwendung
+### Shortcode Usage
 
 ```php
-// Aktuelles SDO Bild einbinden:
+// Embed current SDO imagery:
 [solarscaler channel="171"]
 [solarscaler channel="193"]
 [solarscaler channel="304"]
@@ -94,14 +94,14 @@ LICENSE           GNU AGPLv3
 
 ---
 
-## 🔒 Sicherheit & DSGVO
+## 🔒 Security & GDPR
 
-SolarScaler wurde nach dem **VGT DIAMANT SUPREME** Standard entwickelt:
+SolarScaler was built to the **VGT DIAMANT SUPREME** standard:
 
-- Alle NASA-Requests laufen **serverseitig** — keine Client-IP verlässt dein Hosting
-- MIME-Type Validierung verhindert das Einschleusen von Schadcode via manipulierter Bilddateien
-- Atomic Flatfile JSON Cache — keine Datenbankbelastung, keine SQL-Injection Angriffsfläche
-- Vollständig **DSGVO / Schrems II konform** — keine Drittstaaten-Datenübertragung
+- All NASA requests run **server-side** — no client IP ever leaves your hosting environment
+- MIME type validation prevents malicious code injection via manipulated image files
+- Atomic Flatfile JSON cache — zero database load, zero SQL injection surface
+- Fully **GDPR / Schrems II compliant** — no third-country data transfers
 
 ---
 
@@ -115,22 +115,22 @@ SolarScaler wurde nach dem **VGT DIAMANT SUPREME** Standard entwickelt:
 [SYNC] DOWNLOADING: 20260313_141022_2048_0171.jpg
 [SAFE] MIME-TYPE: image/jpeg -> VERIFIED
 [COOL] THROTTLE: 500ms cooldown engaged.
-[DONE] 72 SDO Sektoren synchronisiert. Uplink beendet.
+[DONE] 72 SDO sectors synchronized. Uplink terminated.
 ```
 
 ---
 
 ## 🤝 Contributing
 
-Pull Requests sind willkommen. Für größere Änderungen bitte zuerst ein Issue öffnen.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Dieses Projekt steht unter der **GNU AGPLv3 Lizenz** — Open Source, transparent, souverän.
+This project is licensed under **GNU AGPLv3** — open source, transparent, sovereign.
 
 ---
 
 ## ☕ Support the Project
 
-SolarScaler ist und bleibt kostenlos. Wenn es dir Wert schafft:
+SolarScaler is and will remain free. If it creates value for you:
 
 [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-00457C?style=for-the-badge&logo=paypal)](https://www.paypal.com/paypalme/dergoldenelotus)
 
@@ -140,9 +140,9 @@ SolarScaler ist und bleibt kostenlos. Wenn es dir Wert schafft:
 
 [![VGT](https://img.shields.io/badge/VGT-VisionGaia_Technology-red?style=for-the-badge)](https://visiongaiatechnology.de)
 
-VisionGaia Technology entwickelt Security- und KI-Tooling auf Enterprise-Niveau — gebaut nach dem DIAMANT VGT SUPREME Standard.
+VisionGaia Technology builds enterprise-grade security and AI tooling — engineered to the DIAMANT VGT SUPREME standard.
 
-> *"In einer Welt des zentralisierten Tracking-Wahnsinns ist der SolarScaler ein autonomer Knotenpunkt der digitalen Freiheit."*
+> *"In a world of centralized tracking madness, SolarScaler is an autonomous node of digital freedom."*
 
 ---
 
