@@ -1,0 +1,122 @@
+/* * VISIONGAIATECHNOLOGY SKIN v3.1 (GDPR/DSGVO SAFE)
+ * MODE: LOCAL ASSETS ONLY
+ * PATH: /wp-content/uploads/vgt-shadow-net/assets/
+ */
+
+/* --- REMOVED GOOGLE FONTS IMPORT --- */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap'); */
+
+/* --- LOCAL FONT DEFINITIONS --- */
+
+/* FAMILY: INTER (Main UI) */
+@font-face {
+    font-family: 'Inter';
+    src: url('/wp-content/uploads/vgt-shadow-net/assets/Inter-Regular.woff2') format('woff2'),
+         url('/wp-content/uploads/vgt-shadow-net/assets/Inter-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/wp-content/uploads/vgt-shadow-net/assets/Inter-SemiBold.woff2') format('woff2'),
+         url('/wp-content/uploads/vgt-shadow-net/assets/Inter-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/wp-content/uploads/vgt-shadow-net/assets/Inter-ExtraBold.woff2') format('woff2'),
+         url('/wp-content/uploads/vgt-shadow-net/assets/Inter-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* FAMILY: SPACE GROTESK (Headlines / HUD) */
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/wp-content/uploads/vgt-shadow-net/assets/SpaceGrotesk-Regular.woff2') format('woff2'),
+         url('/wp-content/uploads/vgt-shadow-net/assets/SpaceGrotesk-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/wp-content/uploads/vgt-shadow-net/assets/SpaceGrotesk-Bold.woff2') format('woff2'),
+         url('/wp-content/uploads/vgt-shadow-net/assets/SpaceGrotesk-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* FAMILY: JETBRAINS MONO (Data / Numbers) */
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/wp-content/uploads/vgt-shadow-net/assets/JetBrainsMono-Regular.woff2') format('woff2'),
+         url('/wp-content/uploads/vgt-shadow-net/assets/JetBrainsMono-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/wp-content/uploads/vgt-shadow-net/assets/JetBrainsMono-Bold.woff2') format('woff2'),
+         url('/wp-content/uploads/vgt-shadow-net/assets/JetBrainsMono-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ISOLATED ROOT CONTAINER */
+#vg-sun-root {
+    font-family: 'Inter', sans-serif;
+    background-color: #050505;
+    color: #e2e8f0;
+    line-height: 1.5;
+    min-height: 70vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#vg-sun-root *, #vg-sun-root ::before, #vg-sun-root ::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #334155;
+}
+
+/* MODULAR COMPONENT: GLASS PANEL */
+#vg-sun-root .glass-panel {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* EFFECTS */
+#vg-sun-root .hud-text { text-shadow: 0 0 8px rgba(234, 179, 8, 0.6); }
+#vg-sun-root .aurora-text { text-shadow: 0 0 8px rgba(52, 211, 153, 0.6); }
+#vg-sun-root .mag-text { text-shadow: 0 0 8px rgba(34, 211, 238, 0.6); }
+
+#vg-sun-root .scanlines {
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0) 50%,
+        rgba(0,0,0,0.1) 50%,
+        rgba(0,0,0,0.1)
+    );
+    background-size: 100% 4px;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.4;
+}
