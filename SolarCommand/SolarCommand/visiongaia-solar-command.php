@@ -4,6 +4,13 @@
  * Description: High-Fidelity Solar Telemetry. Modular. Proxied. DSGVO-Compliant.
  * Version: 3.7.0 (OMEGA - ISOLATION FIX)
  * Author: VisionGaiaTechnology
+ * Requires PHP: 8.0
+ * License:     AGPL-3.0-or-later
+ * License URI: https://www.gnu.org/licenses/agpl-3.0.html
+ * * VGT OMEGA PROTOCOL: This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or (at your option) 
+ * any later version.
  */
 
 if (!defined('ABSPATH')) exit;
